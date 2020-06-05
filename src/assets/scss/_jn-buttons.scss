@@ -1,0 +1,93 @@
+.jn-button {
+    background: #28c0c2;
+    opacity: 1;
+    border: 2px solid $base-blue;
+    border-radius: 25px;
+    color: $base-white;
+    letter-spacing: -0.3px;
+    text-decoration: none;
+    padding: 8px 24px;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    width: 243px;
+    height: 48px;
+
+    &:hover,
+    &:focus {
+        background-image: linear-gradient(
+            186deg,
+            rgba(98, 177, 142, 0.6),
+            #28c0c3 54%
+        );
+        color: $base-white;
+        text-shadow: none;
+        opacity: 1;
+    }
+
+    &--box-shadow {
+        box-shadow: 0 2px 8px 0 rgba(166, 166, 166, 0.5);
+    }
+
+    &--border {
+        border: 3px solid $base-white;
+    }
+}
+
+.button {
+    font-size: 22px;
+    background-image: linear-gradient(
+        160deg,
+        hsla(0, 0%, 100%, 0.5),
+        hsla(0, 0%, 100%, 0)
+    );
+    border: 3px solid #fff;
+    border-radius: 50px;
+    color: $base-white !important;
+    letter-spacing: -0.3px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 35px;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &-secondary {
+        background-image: linear-gradient(
+            174deg,
+            rgba(98, 177, 142, 0.6),
+            #28c0c3 53%
+        );
+        box-shadow: none;
+        border: none;
+        text-shadow: none;
+        color: $base_white !important;
+        transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+    }
+
+    &-submit {
+        background-color: #fff;
+        background-image: none;
+        border: none;
+        color: $base-blue !important;
+        text-shadow: none;
+        padding: 12px 50px;
+        box-shadow: none;
+        transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        cursor: pointer;
+    }
+}

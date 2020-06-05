@@ -1,0 +1,51 @@
+<div class="container-fluid d-flex align-items-center jn-nav">
+  <a class="logo mr-5" routerLink="/">JONIKS</a>
+
+  <div class="m-auto">
+    <ul class="list-inline">
+      <li class="list-inline-item mr-4">
+        <a routerLink="/food-library" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: false }">{{ 'joniks.global.menu.milkTea' | translate }}</a>
+      </li>
+      <li class="list-inline-item mr-4">
+        <a routerLink="/courses" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }">{{ 'joniks.global.menu.fruitTea' | translate }}</a>
+      </li>
+      <li class="list-inline-item mr-4">
+        <a routerLink="/profile" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }">{{ 'joniks.global.menu.blended' | translate }}</a>
+      </li>
+      <li class="list-inline-item mr-4">
+        <a routerLink="/food-advice" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }">{{ 'joniks.global.menu.coffee' | translate }}</a>
+      </li>
+      <li class="list-inline-item mr-4">
+        <a routerLink="/settings" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: false }">{{ 'joniks.global.menu.food' | translate }}</a>
+      </li>
+      <li class="list-inline-item">
+        <form name="searchForm" role="form" novalidate (ngSubmit)="performSearch()" [formGroup]="searchForm">
+          <div class="input-group search-input">
+            <div class="input-group-prepend">
+              <div class="input-group-text search-icon-group pointer" (click)="performSearch()">
+                <fa-icon *ngIf="isSearching" class="search-icon spinner-icon" [icon]="'spinner'" [spin]="true">
+                </fa-icon>
+                <fa-icon *ngIf="!isSearching" icon="search" class="search-icon"></fa-icon>
+              </div>
+            </div>
+            <input type="text" class="form-control search-input-text" name="searchKey" formControlName="searchKey">
+          </div>
+        </form>
+      </li>
+    </ul>
+    <div class="active-link-indicator"></div>
+  </div>
+
+  <div class="">
+    <ul class="list-inline">
+      <li class="list-inline-item mr-4">
+        <a class="font-size-sm" (click)="logout()">{{ 'global.menu.logout' | translate }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

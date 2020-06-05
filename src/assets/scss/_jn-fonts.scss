@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Work+Sans&display=swap');
+
+$work-sans: 'Work Sans', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+
+.work-sans {
+  font-family: $work-sans;
+}
+
+.open-sans {
+  font-family: $open-sans;
+}

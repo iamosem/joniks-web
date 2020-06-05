@@ -1,18 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { JoniksHomeModule } from './home/home.module';
+import { MainComponent } from './layouts/main/main.component';
+import { JoniksSharedModule } from './shared/shared.module';
+import './vendor';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [MainComponent],
+  imports: [BrowserModule, AppRoutingModule, JoniksSharedModule, JoniksHomeModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MainComponent],
 })
 export class AppModule { }

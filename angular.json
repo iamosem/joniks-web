@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "jn",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
@@ -110,7 +110,7 @@
     "joniks-web-e2e": {
       "root": "e2e/",
       "projectType": "application",
-      "prefix": "",
+      "prefix": "jn",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",

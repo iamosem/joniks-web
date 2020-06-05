@@ -1,0 +1,14 @@
+{
+  "joniks": {
+    "global": {
+      "menu": {
+        "milkTea": "Milktea",
+        "fruitTea": "Fruit Tea",
+        "blended": "Blended",
+        "coffee": "Coffee",
+        "food": "Food",
+        "logout": "Logout"
+      }
+    }
+  }
+}

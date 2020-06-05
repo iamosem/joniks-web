@@ -1,0 +1,10 @@
+<div>
+  <div [ngSwitch]="isAuthenticated()">
+    <div *ngSwitchCase="true">
+      <router-outlet name="navbar"></router-outlet>
+    </div>
+    <router-outlet></router-outlet>
+    <router-outlet name="popup"></router-outlet>
+    <router-outlet name="footer"></router-outlet>
+  </div>
+</div>
