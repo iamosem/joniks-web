@@ -1,19 +1,53 @@
+@import '../../assets/scss/jn-mixins';
+@import '../../assets/scss/jn-colors';
+
 .background {
     width: 100%;
     min-height: 900px;
     max-height: 900px;
-    margin-top: 200px;
+    margin-top: 150px;
     background: url('../../assets/images/banner.JPG');
     background-size: cover;
     background-position: bottom;
+    @include animation(0s, 0.4s, slide-down, 1);
 }
 
 .banner {
-    margin-top: 40px;
-    margin-left: 60px;
+    position: absolute;
+    top: 180px;
+    left: 150px;
+    z-index: 99999;
+    max-width: 500px;
     max-width: 500px;
 }
 
 .banner .title {
     font-size: 50px;
+}
+
+.awards {
+    position: absolute;
+    top: 180px;
+    right: 150px;
+    z-index: 99999;
+}
+
+.awards .award-item {
+    min-width: 250px;
+    max-width: 250px;
+}
+
+.cheesecake {
+    position: absolute;
+    display: block;
+    top: 600px;
+    right: 150px;
+    text-align: center;
+}
+
+.cheesecake .cart-item-name {
+    color: $base-white;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }

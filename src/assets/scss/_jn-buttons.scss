@@ -1,7 +1,7 @@
 .jn-button {
-    background: #28c0c2;
+    background: $base-green;
     opacity: 1;
-    border: 2px solid $base-blue;
+    border: 2px solid $base-green;
     border-radius: 25px;
     color: $base-white;
     letter-spacing: -0.3px;
@@ -20,8 +20,8 @@
     &:focus {
         background-image: linear-gradient(
             186deg,
-            rgba(98, 177, 142, 0.6),
-            #28c0c3 54%
+            $base-green,
+            lighten($base-green, 5%) 54%
         );
         color: $base-white;
         text-shadow: none;
