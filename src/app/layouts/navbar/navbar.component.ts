@@ -2,6 +2,7 @@ import { AfterViewChecked, Component, ElementRef, HostListener, OnInit, Renderer
 import { FormBuilder } from '@angular/forms';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { AuthService, FacebookLoginProvider, SocialUser } from 'angularx-social-login';
 
 @Component({
   selector: 'jn-navbar',
@@ -20,11 +21,15 @@ export class NavbarComponent implements OnInit, AfterViewChecked {
     searchKey: []
   });
 
+  user: SocialUser;
+  loggedIn: boolean;
+
   constructor(
     private elmRef: ElementRef,
     private renderer: Renderer2,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
 
     //   private loginService: LoginService,
     //   private languageService: JhiLanguageService,
@@ -45,6 +50,11 @@ export class NavbarComponent implements OnInit, AfterViewChecked {
     //   this.swaggerEnabled = profileInfo.swaggerEnabled;
     // });
     this.monitorChangeInUrl();
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+      console.log(this.user);
+    });
   }
 
   ngAfterViewChecked(): void {
@@ -87,10 +97,6 @@ export class NavbarComponent implements OnInit, AfterViewChecked {
   //   this.loginService.login();
   // }
 
-  logout() {
-    console.error('@@@ logout invoked');
-  }
-
   // toggleNavbar() {
   //   this.isNavbarCollapsed = !this.isNavbarCollapsed;
   // }
@@ -131,5 +137,13 @@ export class NavbarComponent implements OnInit, AfterViewChecked {
         this.renderer.addClass(logo, 'animate');
       });
     }
+  }
+
+  signInWithFB(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+
+  logout(): void {
+    this.authService.signOut();
   }
 }

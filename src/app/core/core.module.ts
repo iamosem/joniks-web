@@ -8,6 +8,18 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { fontAwesomeIcons } from './icons/font-awesome-icons';
+import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
+
+const config = new AuthServiceConfig([
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('2508355726146040')
+  }
+]);
+
+export function provideConfig() {
+  return config;
+}
 
 @NgModule({
   imports: [
@@ -18,12 +30,17 @@ import { fontAwesomeIcons } from './icons/font-awesome-icons';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    SocialLoginModule
   ],
   providers: [
     {
       provide: LOCALE_ID,
       useValue: 'en'
+    },
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
     }
   ]
 })

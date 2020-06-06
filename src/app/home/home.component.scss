@@ -40,7 +40,7 @@
 .cheesecake {
     position: absolute;
     display: block;
-    top: 600px;
+    top: 500px;
     right: 150px;
     text-align: center;
 }
@@ -49,5 +49,12 @@
     color: $base-white;
     font-size: 30px;
     font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.cheesecake .cart-item-price {
+    color: $base-white;
+    font-size: 40px;
+    font-weight: 700;
     margin-bottom: 10px;
 }

@@ -43,8 +43,16 @@
 
   <div class="">
     <ul class="list-inline">
-      <li class="list-inline-item mr-4">
-        <a class="font-size-sm" (click)="logout()">{{ 'joniks.global.menu.logout' | translate }}</a>
+      <li class="list-inline-item mr-4  d-flex justify-content-center align-items-center">
+        <a class="font-size-sm" (click)="signInWithFB()"
+          *ngIf="loggedIn===false">{{ 'joniks.global.menu.signIn' | translate }}</a>
+        <ng-container *ngIf="loggedIn===true">
+          <div class="user-cart">
+            <fa-icon icon="shopping-cart"></fa-icon>
+          </div>
+          <div class="user-photo" [style]="'background-image: url(' + user.photoUrl + ')' | safe:'style'"></div>
+          <a class="ml-4 font-size-sm" (click)="logout()">{{ 'joniks.global.menu.logout' | translate }}</a>
+        </ng-container>
       </li>
     </ul>
   </div>
