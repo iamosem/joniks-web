@@ -1,0 +1,19 @@
+.background {
+    width: 100%;
+    min-height: 900px;
+    max-height: 900px;
+    margin-top: 200px;
+    background: url('../../assets/images/banner.JPG');
+    background-size: cover;
+    background-position: bottom;
+}
+
+.banner {
+    margin-top: 40px;
+    margin-left: 60px;
+    max-width: 500px;
+}
+
+.banner .title {
+    font-size: 50px;
+}

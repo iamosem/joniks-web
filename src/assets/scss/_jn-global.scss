@@ -2,8 +2,8 @@ html,
 body {
     width: 100%;
     height: 100vh;
-    font-family: $open-sans;
-    font-size: 16px;
+    font-family: $quicksand;
+    font-size: 14px;
     color: $base-black;
 }
 
@@ -65,4 +65,31 @@ li:hover {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(152, 206, 181);
+}
+
+.jn-nav {
+    font-weight: 400 !important;
+    font-size: 18px;
+    padding: 20px 40px;
+}
+
+.jn-nav .active-link-indicator {
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    position: absolute;
+    top: 55px;
+    border-radius: 4px;
+    border: 4px solid $base-white;
+    width: 0;
+    visibility: hidden;
+}
+
+.jn-main-container {
+    position: absolute;
+    z-index: 999;
+    top: 150px;
+    padding: 0 50px;
 }

@@ -1,100 +1,94 @@
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
+@import '../../../assets/scss/jn-colors';
+@import '../../../assets/scss/jn-mixins';
 
-.jn-nav {
-    font-weight: 400 !important;
-    color: #414141;
-    font-size: 18px;
-    padding: 20px 40px;
+.jn-nav .logo {
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    @include transition(all 0.3s ease);
+}
 
-    .logo {
-        color: #28c0c3;
-        font-size: 24px;
-    }
+.jn-nav .logo.animate {
+    @include animation(0s, 0.3s, zoom-out, 1);
+}
 
-    ul {
-        margin-bottom: 0;
-    }
+.jn-nav .logo img {
+    min-height: 150px;
+    max-height: 150px;
+}
 
-    //   .active-link {
-    //     border-bottom: 4px solid #28c0c3;
-    //     border-radius: 3px;
-    //     color: #28c0c3 !important;
-    //   }
+.jn-nav ul {
+    margin-bottom: 0;
+}
 
-    .active-link-indicator {
-        transition: all 0.3s ease;
-        -moz-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        -webkit-transition: all 0.3s ease;
-        position: absolute;
-        top: 55px;
-        border-radius: 4px;
-        border: 4px solid #28c0c3;
-        width: 0;
-        visibility: hidden;
-    }
+.jn-nav .list-inline-item > a {
+    color: $base-white;
+}
 
-    .search-input {
-        transition: all 0.3s ease;
-        -moz-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        -webkit-transition: all 0.3s ease;
-        &:hover {
-            z-index: 99999;
-            transform: scale(1.09) translateX(10px);
-            -moz-transform: scale(1.09) translateX(10px);
-            -ms-transform: scale(1.09) translateX(10px);
-            -o-transform: scale(1.09) translateX(10px);
-            -webkit-transform: scale(1.09) translateX(10px);
-        }
-    }
+.jn-nav .list-inline-item > a:hover {
+    color: darken($base-white, 10%);
+}
 
-    .search-icon {
-        background: linear-gradient(
-                182.18deg,
-                #9dcfba -486.15%,
-                #28c0c3 276.69%
-            ),
-            #e7e7e7;
-        color: white;
-        padding: 6px;
-        border-radius: 50%;
-        height: 32px;
-        width: 32px;
-        font-size: 14px;
-    }
+.jn-nav .dropdown-menu {
+    margin-top: 20px;
+    box-shadow: 0 2px 8px 0 rgba(166, 166, 166, 0.1);
+}
 
-    .search-icon-group {
-        border: 1px solid #dedede;
-        border-right: none;
-        border-radius: 24px 0 0 24px;
-        background-color: #f9f9f9;
-        padding: 3px;
-    }
+.banner {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+}
 
-    .search-input-text {
-        border: 1px solid #dedede;
-        border-left: none;
-        border-radius: 0 24px 24px 0;
-        background-color: #f9f9f9;
-        padding: 3px;
-        height: 40px;
+.banner .background {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
-        &:focus,
-        &:hover {
-            box-shadow: none;
-        }
-    }
+.banner .background svg {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    stroke: none;
+    background-color: transparent;
+    z-index: 9;
+    @include transition(all 0.3s ease);
+}
 
-    .list-inline-item > a:hover {
-        color: inherit;
-    }
+.banner .background svg .low {
+    fill: rgba(lighten($base-green, 15%), 0.5);
+}
 
-    .dropdown-menu {
-        margin-top: 20px;
-        box-shadow: 0 2px 8px 0 rgba(166, 166, 166, 0.1);
-    }
+.banner .background svg .mid {
+    fill: rgba(lighten($base-green, 10%), 0.8);
+}
+
+.banner .background svg .top {
+    fill: $base-green;
+}
+
+.banner .background svg.small {
+    @include translateY(0);
+}
+
+.banner .background svg.large {
+    @include translateY(-100%);
+}
+
+.banner .background.expand svg.small {
+    @include translateY(-100%);
+}
+
+.banner .background.expand svg.large {
+    @include translateY(0);
 }

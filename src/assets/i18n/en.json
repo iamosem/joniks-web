@@ -1,9 +1,10 @@
 {
   "joniks": {
     "global": {
+      "title": "Joniks Tea & Coffee",
       "menu": {
-        "milkTea": "Milktea",
-        "fruitTea": "Fruit Tea",
+        "milktea": "Milktea",
+        "fruittea": "Fruit Tea",
         "blended": "Blended",
         "coffee": "Coffee",
         "food": "Food",

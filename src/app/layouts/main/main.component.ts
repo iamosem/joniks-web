@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'jn-main',
@@ -8,6 +9,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class MainComponent implements OnInit, OnDestroy {
   title = 'joniks-web';
   test = 'sample';
+
+  constructor(private translateService: TranslateService) {
+    this.translateService.setDefaultLang('en');
+    this.translateService.use('en');
+  }
 
   ngOnInit(): void { }
 

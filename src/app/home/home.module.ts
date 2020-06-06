@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { JoniksSharedModule } from '../shared/shared.module';
 import { HOME_ROUTE } from './home.route';
+import { HomeComponent } from './home.component';
 
 @NgModule({
-  imports: [JoniksSharedModule, RouterModule.forChild([HOME_ROUTE])]
+  imports: [JoniksSharedModule, RouterModule.forChild([HOME_ROUTE])],
+  declarations: [HomeComponent]
 })
 export class JoniksHomeModule { }

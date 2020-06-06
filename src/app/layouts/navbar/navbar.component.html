@@ -1,42 +1,42 @@
-<div class="container-fluid d-flex align-items-center jn-nav">
-  <a class="logo mr-5" routerLink="/">JONIKS</a>
+<div class="container-fluid d-flex align-items-center jn-nav bg-green">
+  <a class="logo mr-5" routerLink="/"><img src="../../../assets/images/logo.png"> </a>
 
   <div class="m-auto">
     <ul class="list-inline">
-      <li class="list-inline-item mr-4">
-        <a routerLink="/food-library" routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{ exact: false }">{{ 'joniks.global.menu.milkTea' | translate }}</a>
+      <li class="list-inline-item mr-5">
+        <a routerLink="/milktea" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: false }">{{ 'joniks.global.menu.milktea' | translate }}</a>
       </li>
-      <li class="list-inline-item mr-4">
-        <a routerLink="/courses" routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{ exact: true }">{{ 'joniks.global.menu.fruitTea' | translate }}</a>
+      <li class="list-inline-item mr-5">
+        <a routerLink="/fruittea" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }">{{ 'joniks.global.menu.fruittea' | translate }}</a>
       </li>
-      <li class="list-inline-item mr-4">
-        <a routerLink="/profile" routerLinkActive="active-link"
+      <li class="list-inline-item mr-5">
+        <a routerLink="/blended" routerLinkActive="active-link"
           [routerLinkActiveOptions]="{ exact: true }">{{ 'joniks.global.menu.blended' | translate }}</a>
       </li>
-      <li class="list-inline-item mr-4">
-        <a routerLink="/food-advice" routerLinkActive="active-link"
+      <li class="list-inline-item mr-5">
+        <a routerLink="/coffee" routerLinkActive="active-link"
           [routerLinkActiveOptions]="{ exact: true }">{{ 'joniks.global.menu.coffee' | translate }}</a>
       </li>
-      <li class="list-inline-item mr-4">
+      <!-- <li class="list-inline-item mr-5">
         <a routerLink="/settings" routerLinkActive="active-link"
           [routerLinkActiveOptions]="{ exact: false }">{{ 'joniks.global.menu.food' | translate }}</a>
       </li>
       <li class="list-inline-item">
         <form name="searchForm" role="form" novalidate (ngSubmit)="performSearch()" [formGroup]="searchForm">
-          <div class="input-group search-input">
+          <div class="input-group jn-search">
             <div class="input-group-prepend">
-              <div class="input-group-text search-icon-group pointer" (click)="performSearch()">
-                <fa-icon *ngIf="isSearching" class="search-icon spinner-icon" [icon]="'spinner'" [spin]="true">
+              <div class="input-group-text jn-search-icon-group pointer" (click)="performSearch()">
+                <fa-icon *ngIf="isSearching" class="jn-search-icon spinner-icon" [icon]="'spinner'" [spin]="true">
                 </fa-icon>
-                <fa-icon *ngIf="!isSearching" icon="search" class="search-icon"></fa-icon>
+                <fa-icon *ngIf="!isSearching" icon="search" class="jn-search-icon"></fa-icon>
               </div>
             </div>
-            <input type="text" class="form-control search-input-text" name="searchKey" formControlName="searchKey">
+            <input type="text" class="form-control jn-search-input-text" name="searchKey" formControlName="searchKey">
           </div>
         </form>
-      </li>
+      </li> -->
     </ul>
     <div class="active-link-indicator"></div>
   </div>
@@ -44,8 +44,22 @@
   <div class="">
     <ul class="list-inline">
       <li class="list-inline-item mr-4">
-        <a class="font-size-sm" (click)="logout()">{{ 'global.menu.logout' | translate }}</a>
+        <a class="font-size-sm" (click)="logout()">{{ 'joniks.global.menu.logout' | translate }}</a>
       </li>
     </ul>
+  </div>
+</div>
+<div class="banner">
+  <div class="background" [class.expand]="isHome()">
+    <svg class="small" viewBox="0 0 500 60" preserveAspectRatio="xMinYMin meet">
+      <path class="low" d="M0,20 C130,55 180,0 500,20 L500,00 L0,0 Z"></path>
+      <path class="mid" d="M0,25 C150,35 350,0 500,20 L500,00 L0,0 Z"></path>
+      <path class="top" d="M0,15 C150,35 350,0 500,20 L500,00 L0,0 Z"></path>
+    </svg>
+    <svg class="large" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+      <path class="low" d="M0,140 C130,260 180,0 500,100 L500,00 L0,0 Z"></path>
+      <path class="mid" d="M0,150 C150,200 350,0 500,100 L500,00 L0,0 Z"></path>
+      <path class="top" d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z"></path>
+    </svg>
   </div>
 </div>

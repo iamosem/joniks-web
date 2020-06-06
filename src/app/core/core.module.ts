@@ -2,8 +2,12 @@ import { registerLocaleData } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import locale from '@angular/common/locales/en';
 import { LOCALE_ID, NgModule } from '@angular/core';
-import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { fontAwesomeIcons } from './icons/font-awesome-icons';
 
 @NgModule({
   imports: [
@@ -11,7 +15,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
+        useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
     })
@@ -24,13 +28,14 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
   ]
 })
 export class JoniksCoreModule {
-  constructor(translate: TranslateService) {
+  constructor(iconLibrary: FaIconLibrary) {
     registerLocaleData(locale);
-    translate.setDefaultLang('en');
-    translate.use('en');
+    iconLibrary.addIconPacks(fas);
+    iconLibrary.addIconPacks(far);
+    iconLibrary.addIcons(...fontAwesomeIcons);
   }
 }
 
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
 }

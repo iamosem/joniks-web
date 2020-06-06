@@ -219,6 +219,14 @@
     transform: scale($deg);
 }
 
+@mixin translateY($y) {
+    transform: translateY($y);
+    -moz-transform: translateY($y);
+    -ms-transform: translateY($y);
+    -o-transform: translateY($y);
+    -webkit-transform: translateY($y);
+}
+
 @mixin rippleitem() {
     position: relative;
     overflow: hidden;
@@ -230,7 +238,7 @@
     animation-duration: $value;
 }
 
-@mixin animation($delay, $duration, $animation) {
+@mixin animation($delay, $duration, $animation, $count: infinite) {
     -webkit-animation-delay: $delay;
     -webkit-animation-duration: $duration;
     -webkit-animation-name: $animation;
@@ -240,13 +248,13 @@
     -moz-animation-delay: $delay;
     -moz-animation-duration: $duration;
     -moz-animation-name: $animation;
-    -moz-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: $count;
     -moz-animation-timing-function: linear;
 
     animation-delay: $delay;
     animation-duration: $duration;
     animation-name: $animation;
-    animation-iteration-count: infinite;
+    animation-iteration-count: $count;
     animation-timing-function: linear;
 }
 
